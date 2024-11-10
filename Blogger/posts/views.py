@@ -62,11 +62,6 @@ def custom_404_view(request, exception):
 
 
 def all_posts_view(request:HttpRequest):
-    #posts = Post.objects.filter(is_published__gte=3).order_by("-published_at")
-    #posts = Post.objects.filter(is_published__gte=True).exclude(title__contains="AI").order_by("-published_at")
-    #posts = Post.objects.all().order_by("-published_at")
-    #results count
-    #print(posts.count())
     
     post_list = Post.objects.all()
     paginator = Paginator(post_list, 10)  # Show 10 posts per page
